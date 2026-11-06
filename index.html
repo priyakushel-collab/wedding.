@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deepak &amp; Supriya · Wedding Invitation</title>
+<meta name="description" content="You are invited to the wedding of Deepak and Supriya · 10 &amp; 11 February 2027 · Shivamogga">
+<meta name="theme-color" content="#2b0614">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Noto+Serif+Devanagari:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--night:#2b0614;--panel:#42101f;--gold:#dcb46c;--cream:#fff3de;--rose:#e08a9a;--maroon:#7a1a38}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;line-height:1.6;padding-bottom:env(safe-area-inset-bottom)}
+body.locked{overflow:hidden}
+.dev{font-family:'Noto Serif Devanagari','Cormorant Garamond',serif;color:var(--gold)}
+h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.4rem,8vw,3.4rem);color:var(--gold);text-align:center;line-height:1.2;margin-bottom:.4rem}
+section{padding:4.5rem 1.25rem;max-width:760px;margin:0 auto;text-align:center}
+.alt{background:var(--panel);max-width:none}
+.alt>.in{max-width:760px;margin:0 auto}
+.lead{opacity:.8;margin-bottom:2rem}
+.flower{width:56px;height:56px;color:var(--gold);display:block;margin:0 auto}
+.divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin:1rem auto;color:var(--gold)}
+.divider:before,.divider:after{content:"";height:1px;width:70px;background:var(--gold);opacity:.6}
+.divider svg{width:28px;height:28px}
+button,.btn{font:inherit;cursor:pointer;border:1px solid var(--gold);background:transparent;color:var(--gold);padding:.55rem 1.4rem;border-radius:999px;text-decoration:none;display:inline-block;transition:background .2s,color .2s}
+button:hover,.btn:hover{background:var(--gold);color:var(--night)}
+.solid{background:var(--gold);color:var(--night);font-weight:600}
+.solid:hover{background:var(--cream)}
+.small{font-size:1rem;padding:.3rem 1rem}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* Opening seal */
+.intro{position:fixed;inset:0;z-index:50}
+.flap{position:absolute;left:0;right:0;height:50%;background:radial-gradient(circle at 50% 100%,#5a1230,var(--night));transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
+.flap.top{top:0;border-bottom:1px solid rgba(220,180,108,.35)}
+.flap.bot{bottom:0;background:radial-gradient(circle at 50% 0,#5a1230,var(--night))}
+.intro.open .top{transform:translateY(-101%)}
+.intro.open .bot{transform:translateY(101%)}
+.intro .msg{position:absolute;top:11%;left:0;right:0;text-align:center;z-index:2;transition:opacity .5s;padding:0 1rem}
+.intro .msg small{display:block;letter-spacing:.2em;font-size:.95rem;color:var(--gold)}
+.intro .msg .om{font-size:2.4rem;line-height:1.3}
+.intro .msg .nm{font-family:'Great Vibes',cursive;font-size:clamp(2.4rem,10vw,3.8rem)}
+.seal{position:absolute;z-index:3;top:50%;left:50%;width:130px;height:130px;margin:-65px 0 0 -65px;padding:0;border:none;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f0d49a,#b0863a);color:var(--night);font-family:'Great Vibes',cursive;font-size:2.4rem;box-shadow:0 0 0 6px rgba(220,180,108,.25),0 10px 30px #0008;animation:pulse 2.2s infinite;transition:transform .6s,opacity .6s}
+.seal:hover{background:radial-gradient(circle at 35% 30%,#f7e2b3,#b0863a);color:var(--night)}
+.intro .tap{position:absolute;bottom:14%;left:0;right:0;text-align:center;z-index:2;color:var(--gold);transition:opacity .5s}
+.intro.open .seal{transform:scale(1.6);opacity:0;animation:none}
+.intro.open .msg,.intro.open .tap{opacity:0}
+@keyframes pulse{50%{box-shadow:0 0 0 16px rgba(220,180,108,0),0 10px 30px #0008}}
+
+/* Hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;max-width:none;padding-top:3rem;background:radial-gradient(ellipse at 50% 0,#6a1838 0,var(--night) 70%)}
+.hero .om{font-size:2.2rem;line-height:1.2}
+.names{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(3rem,13vw,5.8rem);line-height:1.1;color:var(--cream);margin:.3rem 0}
+.names i{color:var(--gold);font-size:.6em}
+.corner{position:absolute;width:150px;height:150px;color:var(--gold);opacity:.3}
+.corner.tl{top:-30px;left:-30px}.corner.br{bottom:-30px;right:-30px;transform:rotate(180deg)}
+.petal{position:absolute;top:-30px;width:14px;height:18px;background:var(--rose);border-radius:100% 0 100% 0;opacity:.6;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg) translateX(40px)}}
+.date{font-size:1.5rem;color:var(--gold)}
+.count{display:flex;gap:.8rem;justify-content:center;margin:1.4rem 0 1.4rem;flex-wrap:wrap}
+.count div{min-width:74px;padding:.7rem .3rem;border:1px solid rgba(220,180,108,.5);border-radius:14px;background:rgba(43,6,20,.6)}
+.count b{display:block;font-size:2.2rem;line-height:1.1;color:var(--gold);font-weight:600}
+.count span{font-size:.9rem;opacity:.8}
+
+/* Bride and groom figures */
+.dolls{display:flex;justify-content:center;align-items:flex-end;gap:14px;margin:.6rem auto}
+.doll{width:142px;height:190px;position:relative;animation:float 3.8s ease-in-out infinite;transform:scale(.8);transform-origin:bottom center;margin:0 -10px}
+.doll.bride{animation-delay:.5s}
+.doll>*{position:absolute}
+.head{width:58px;height:64px;border-radius:48% 48% 45% 45%;background:#c9825d;top:17px;left:42px;border:2px solid #8c503b;z-index:2}
+.hair{width:62px;height:34px;border-radius:50% 50% 25% 25%;background:#2e1c1c;top:10px;left:40px;z-index:3}
+.face{top:44px;left:58px;z-index:4;color:#42221f;font-size:17px;letter-spacing:8px}
+.dress{bottom:0;left:12px;width:118px;height:122px;border:2px solid var(--gold);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);background:linear-gradient(90deg,#8f1636,#c13c55,#8f1636)}
+.groom .dress{background:linear-gradient(90deg,#d6a94d,#fff0c8,#c18b35);clip-path:polygon(25% 0,75% 0,91% 100%,9% 100%)}
+.dupatta{width:50px;height:115px;left:10px;bottom:4px;background:rgba(237,177,90,.72);transform:rotate(12deg);border-radius:50% 0 0 0;z-index:1}
+.turban{top:3px;left:36px;width:68px;height:25px;background:#a51d3d;border-radius:50% 50% 10% 10%;z-index:5;border:2px solid var(--gold)}
+.turban:after{content:"✦";color:var(--gold);position:absolute;left:28px;top:-13px;font-size:20px}
+.neck{top:77px;left:48px;z-index:5;color:#f1c45e;font-size:22px}
+@keyframes float{50%{transform:scale(.8) translateY(-8px)}}
+
+/* Families */
+.fam{display:grid;gap:1.2rem;grid-template-columns:1fr 1fr;margin-top:1.5rem}
+.fam>div{border:1px solid rgba(220,180,108,.4);border-radius:18px;padding:1.4rem 1rem;background:var(--night)}
+.fam h3{font-family:'Great Vibes',cursive;font-weight:400;color:var(--gold);font-size:1.9rem}
+.fam strong{font-size:1.4rem}
+.fam small{display:block;opacity:.75}
+.fam .btn{margin-top:.8rem}
+@media(max-width:560px){.fam{grid-template-columns:1fr}}
+
+/* Schedule */
+.tl{margin:2rem 0 0;text-align:left;padding-left:2rem;border-left:1px solid var(--gold)}
+.ev{position:relative;margin-bottom:2.2rem}
+.ev:before{content:"";position:absolute;left:calc(-2rem - 6px);top:.5rem;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(220,180,108,.2)}
+.ev .t{color:var(--gold);font-size:1.1rem}
+.ev h3{font-family:'Great Vibes',cursive;font-weight:400;font-size:2.1rem;line-height:1.2}
+.ev .btn{margin:.6rem .3rem 0 0}
+
+/* Bridesmaids slider */
+.slider{position:relative;margin-top:1.5rem}
+.track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:.5rem 0}
+.track::-webkit-scrollbar{display:none}
+.maid{flex:0 0 min(78%,250px);scroll-snap-align:center;border:1px solid rgba(220,180,108,.45);border-radius:20px;padding:1.6rem 1rem;background:linear-gradient(160deg,#5a1230,var(--night))}
+.maid .mono{width:92px;height:92px;margin:0 auto .8rem;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold);background:radial-gradient(circle,#7a1a38,#42101f)}
+.maid b{font-size:1.4rem;font-weight:600;display:block}
+.maid small{opacity:.7}
+.arrows{display:flex;justify-content:center;gap:1rem;margin-top:1rem}
+.arrows button{width:46px;height:46px;padding:0;font-size:1.4rem;line-height:1}
+
+/* Venue */
+.venue{border:1px solid rgba(220,180,108,.4);border-radius:18px;padding:1.4rem 1rem;background:var(--panel);margin-top:1.5rem}
+.venue h3{font-family:'Great Vibes',cursive;font-weight:400;color:var(--gold);font-size:2.2rem}
+iframe{width:100%;height:280px;border:0;border-radius:14px;margin:1rem 0}
+
+/* Forms */
+form,.passbox{max-width:480px;margin:0 auto;text-align:left}
+label{display:block;margin:1rem 0 .3rem;color:var(--gold)}
+input[type=text],select,textarea{width:100%;font:inherit;color:var(--cream);background:rgba(255,243,222,.07);border:1px solid rgba(220,180,108,.5);border-radius:12px;padding:.65rem .9rem}
+select option{color:#111}
+textarea{min-height:80px;resize:vertical}
+.chk{display:flex;flex-direction:column;gap:.3rem}
+.chk label{margin:0;color:var(--cream);display:flex;gap:.5rem;align-items:center}
+.preview{white-space:pre-wrap;font-size:1.05rem;background:rgba(0,0,0,.25);border-left:3px solid var(--gold);padding:.8rem 1rem;border-radius:8px;margin:1rem 0}
+.center{text-align:center;margin-top:1.2rem}
+#passOut{margin-top:1.5rem;text-align:center}
+#passOut canvas{width:min(100%,340px);height:auto;border-radius:14px;box-shadow:0 12px 40px #000a}
+#passOut .btn{margin:.8rem .3rem 0}
+
+footer{text-align:center;padding:3rem 1rem calc(3rem + env(safe-area-inset-bottom));border-top:1px solid rgba(220,180,108,.3)}
+footer .nm{font-family:'Great Vibes',cursive;font-size:2.8rem;color:var(--gold)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body class="locked">
+
+<!-- One flower drawing, reused everywhere -->
+<svg width="0" height="0" style="position:absolute"><symbol id="fl" viewBox="-50 -50 100 100">
+<g fill="currentColor"><g id="p"><ellipse cx="0" cy="-22" rx="9" ry="20" opacity=".9"/></g>
+<use href="#p" transform="rotate(45)"/><use href="#p" transform="rotate(90)"/><use href="#p" transform="rotate(135)"/>
+<use href="#p" transform="rotate(180)"/><use href="#p" transform="rotate(225)"/><use href="#p" transform="rotate(270)"/><use href="#p" transform="rotate(315)"/></g>
+<circle r="9" fill="#2b0614"/><circle r="4.5" fill="currentColor"/></symbol></svg>
+
+<div class="intro" id="intro">
+  <div class="flap top"></div><div class="flap bot"></div>
+  <div class="msg"><div class="dev om">ॐ</div><small>YOU ARE CORDIALLY INVITED</small><div class="nm" id="introNames"></div></div>
+  <button class="seal" id="seal" aria-label="Open the invitation">D&amp;S</button>
+  <div class="tap">Tap the seal to open</div>
+</div>
+
+<main>
+<section class="hero">
+  <svg class="corner tl"><use href="#fl"/></svg><svg class="corner br"><use href="#fl"/></svg>
+  <div class="dev om">ॐ</div>
+  <div class="dev" style="font-size:1.15rem">॥ श्री गणेशाय नमः ॥</div>
+  <p style="margin-top:.6rem">With the blessings of the Almighty and our elders</p>
+  <h1 class="names" id="names"></h1>
+  <div class="dolls" aria-label="Illustration of the groom and bride in traditional wedding attire">
+    <div class="doll groom"><div class="hair"></div><div class="head"></div><div class="face">• •</div><div class="turban"></div><div class="dress"></div><div class="neck">✦</div></div>
+    <div class="doll bride"><div class="hair"></div><div class="head"></div><div class="face">• •</div><div class="dupatta"></div><div class="dress"></div><div class="neck">❀</div></div>
+  </div>
+  <div class="date" id="dateLine"></div>
+  <div class="count" id="count"></div>
+  <a class="btn solid" id="calBtn" target="_blank" rel="noopener">Add muhurtham to calendar</a>
+</section>
+
+<section class="alt"><div class="in">
+  <h2>Two Families, One Celebration</h2>
+  <div class="fam" id="fam"></div>
+</div></section>
+
+<section>
+  <h2>Order of the Day</h2>
+  <div class="tl" id="events"></div>
+</section>
+
+<section class="alt"><div class="in">
+  <h2>The Bride's Maids</h2>
+  <p class="lead">Standing beside the bride with love and laughter.</p>
+  <div class="slider">
+    <div class="track" id="track"></div>
+    <div class="arrows"><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></div>
+  </div>
+</div></section>
+
+<section>
+  <h2>The Venue</h2>
+  <div class="venue">
+    <h3 id="vName"></h3>
+    <div id="vLines"></div>
+    <iframe id="map" title="Venue map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <a class="btn solid" id="dir" target="_blank" rel="noopener">Get directions</a>
+  </div>
+</section>
+
+<section class="alt" id="pass"><div class="in">
+  <h2>Your Invitation Pass</h2>
+  <p class="lead">Type your name to get a personal card you can save or share.</p>
+  <div class="passbox">
+    <label for="gname">Your name</label>
+    <input type="text" id="gname" placeholder="e.g. Uncle Raj &amp; Family">
+    <div class="center"><button class="solid" id="mkPass">Create my pass</button></div>
+  </div>
+  <div id="passOut"></div>
+</div></section>
+
+<section id="rsvp">
+  <h2>Kindly Reply</h2>
+  <p class="lead">Let us know if you can join us. Your reply opens in WhatsApp.</p>
+  <form id="rsvpForm" onsubmit="return false">
+    <label for="side">I am replying to</label>
+    <select id="side"></select>
+    <label for="rname">Your name</label>
+    <input type="text" id="rname" placeholder="Your full name">
+    <label for="guests">Number of guests</label>
+    <select id="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8 or more</option></select>
+    <label>I will attend</label>
+    <div class="chk" id="attend"></div>
+    <label for="wish">Your wishes (optional)</label>
+    <textarea id="wish" placeholder="Write a few kind words"></textarea>
+    <label>Message preview</label>
+    <div class="preview" id="prev2"></div>
+    <div class="center"><a class="btn solid" id="send" target="_blank" rel="noopener">Send RSVP on WhatsApp</a></div>
+  </form>
+</section>
+</main>
+
+<footer>
+  <div class="dev" style="font-size:1.2rem">॥ श्री गणेशाय नमः ॥</div>
+  <div class="nm" id="footNames"></div>
+  <p id="footDate"></p>
+  <p class="lead" style="margin:.8rem 0 1rem">Your presence is our greatest blessing.</p>
+  <a class="btn" id="shareBtn" target="_blank" rel="noopener">Share this invitation on WhatsApp</a>
+</footer>
+
+<script>
+/* ============ EDIT ONLY THIS BLOCK ============ */
+const CONFIG = {
+  groom: "Deepak",
+  bride: "Supriya",
+  weddingDate: "2027-02-11T09:00:00+05:30",   // muhurtham time, used by the countdown
+  dateText: "10 & 11 February 2027",
+  siteUrl: "",                                 // paste your GitHub Pages link here later
+  families: [                                  // groom's family is first
+    { title: "The Groom's Family", name: "Deepak Poojari", line: "Son of Mr. Eshwar Poojari & Mrs. Gayathri Poojari", extra: "Brother: Dharshith Poojari", phone: "917349114349", show: "73491 14349" },
+    { title: "The Bride's Family", name: "Supriya S.H",    line: "Daughter of Mr. Sundaramurthy P. & Mrs. Hemalatha S.", extra: "Brother: Madhusudan S.H", phone: "918310174847", show: "83101 74847" }
+  ],
+  events: [
+    { day: "Wednesday, 10 February", time: "7:00 PM",  title: "Engagement",
+      start: "20270210T133000Z", end: "20270210T153000Z" },
+    { day: "Thursday, 11 February",  time: "9:00 AM – 10:00 AM", title: "Muhurtham", note: "The auspicious wedding ceremony",
+      start: "20270211T033000Z", end: "20270211T043000Z" },
+    { day: "Thursday, 11 February",  time: "12:00 PM", title: "Reception", note: "Lunch to follow",
+      start: "20270211T063000Z", end: "20270211T083000Z" }
+  ],
+  venue: { name: "Thunga Mantapa", lines: ["Sri Balasubramaniam Temple", "Guddekal, Shivamogga – 577201"],
+           map: "Thunga Mantapa Sri Balasubramaniam Temple Guddekal Shivamogga 577201" },
+  maids: ["Sindhu G", "Thanushree R", "Bhargavi K", "Bindhu K.M", "Arpitha N.C"]
+};
+/* ============================================== */
+
+const $ = id => document.getElementById(id);
+const C = CONFIG, both = `${C.groom} & ${C.bride}`, V = C.venue;
+const pageUrl = C.siteUrl || location.href.split('#')[0];
+const q = encodeURIComponent;
+document.title = `${both} · Wedding Invitation`;
+
+// Names and text
+$('introNames').textContent = both;
+$('names').innerHTML = `${C.groom}<br><i>&amp;</i><br>${C.bride}`;
+$('seal').textContent = C.groom[0] + '&' + C.bride[0];
+$('dateLine').textContent = C.dateText;
+$('footNames').textContent = both;
+$('footDate').textContent = C.dateText;
+$('shareBtn').href = `https://wa.me/?text=${q(`You're invited to the wedding of ${both} · ${C.dateText} · ${V.name}, Shivamogga\n${pageUrl}`)}`;
+
+// Opening seal
+$('seal').onclick = () => {
+  $('intro').classList.add('open');
+  document.body.classList.remove('locked');
+  setTimeout(() => $('intro').remove(), 1400);
+};
+
+// Falling petals
+for (let i = 0; i < 14; i++) {
+  const p = document.createElement('span'); p.className = 'petal';
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDuration = 9 + Math.random() * 9 + 's';
+  p.style.animationDelay = -Math.random() * 12 + 's';
+  document.querySelector('.hero').appendChild(p);
+}
+
+// Countdown
+const target = new Date(C.weddingDate).getTime();
+function tick() {
+  const d = Math.max(0, target - Date.now());
+  const v = [Math.floor(d / 864e5), Math.floor(d % 864e5 / 36e5), Math.floor(d % 36e5 / 6e4), Math.floor(d % 6e4 / 1e3)];
+  $('count').innerHTML = ['Days', 'Hours', 'Minutes', 'Seconds'].map((n, i) => `<div><b>${String(v[i]).padStart(2, '0')}</b><span>${n}</span></div>`).join('');
+}
+tick(); setInterval(tick, 1000);
+
+// Calendar links
+const venueFull = `${V.name}, ${V.lines.join(', ')}`;
+const calUrl = e => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${q(both + ' – ' + e.title)}&dates=${e.start}/${e.end}&location=${q(venueFull)}`;
+$('calBtn').href = calUrl(C.events[1]);
+
+// Families
+$('fam').innerHTML = C.families.map(f => `<div><svg class="flower" style="width:36px;height:36px;margin-bottom:.4rem"><use href="#fl"/></svg><h3>${f.title}</h3><strong>${f.name}</strong><p>${f.line}</p><small>${f.extra}</small><a class="btn small" href="tel:+${f.phone}">Call ${f.show}</a></div>`).join('');
+
+// Events
+$('events').innerHTML = C.events.map(e => `<div class="ev"><div class="t">${e.day} · ${e.time}</div><h3>${e.title}</h3><div>${V.name}</div>${e.note ? `<small style="opacity:.7">${e.note}</small><br>` : ''}
+  <a class="btn small" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${q(V.map)}&travelmode=driving">Directions</a><a class="btn small" target="_blank" rel="noopener" href="${calUrl(e)}">Add to calendar</a></div>`).join('');
+
+// Bridesmaids slider
+const track = $('track');
+track.innerHTML = C.maids.map(n => {
+  const ini = n.split(/[ .]+/).filter(Boolean).map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  return `<div class="maid"><div class="mono">${ini}</div><b>${n}</b><small>Bride's maid</small></div>`;
+}).join('');
+const step = () => track.firstElementChild.offsetWidth + 16;
+function slide(dir) {
+  const end = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  if (dir > 0 && end) track.scrollTo({ left: 0, behavior: 'smooth' });
+  else if (dir < 0 && track.scrollLeft < 4) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+  else track.scrollBy({ left: dir * step(), behavior: 'smooth' });
+}
+$('next').onclick = () => slide(1); $('prev').onclick = () => slide(-1);
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let auto = setInterval(() => slide(1), 3200);
+  const stop = () => clearInterval(auto);
+  track.addEventListener('pointerdown', stop); track.addEventListener('mouseenter', stop);
+  $('next').addEventListener('click', stop); $('prev').addEventListener('click', stop);
+}
+
+// Venue
+$('vName').textContent = V.name;
+$('vLines').innerHTML = V.lines.map(l => `<p>${l}</p>`).join('');
+$('map').src = `https://maps.google.com/maps?q=${q(V.map)}&output=embed`;
+$('dir').href = `https://www.google.com/maps/dir/?api=1&destination=${q(V.map)}&travelmode=driving`;
+
+// Invitation pass (drawn on a canvas so it can be saved as a picture)
+$('mkPass').onclick = () => {
+  const name = $('gname').value.trim();
+  if (!name) { $('gname').focus(); return; }
+  const c = document.createElement('canvas'); c.width = 800; c.height = 1100;
+  const x = c.getContext('2d'), mid = 400;
+  const g = x.createLinearGradient(0, 0, 0, 1100); g.addColorStop(0, '#6a1838'); g.addColorStop(1, '#2b0614');
+  x.fillStyle = g; x.fillRect(0, 0, 800, 1100);
+  x.strokeStyle = '#dcb46c'; x.lineWidth = 3; x.strokeRect(30, 30, 740, 1040);
+  x.lineWidth = 1; x.strokeRect(46, 46, 708, 1008);
+  x.textAlign = 'center'; x.fillStyle = '#dcb46c';
+  x.font = '30px "Cormorant Garamond", serif'; x.fillText('INVITATION PASS', mid, 130);
+  x.fillStyle = '#fff3de'; x.font = 'italic 34px "Cormorant Garamond", serif'; x.fillText('Dear', mid, 240);
+  let fs = 84; do { x.font = fs + 'px "Great Vibes", cursive'; fs -= 4; } while (x.measureText(name).width > 640 && fs > 28);
+  x.fillStyle = '#dcb46c'; x.fillText(name, mid, 340);
+  x.fillStyle = '#fff3de'; x.font = '32px "Cormorant Garamond", serif';
+  x.fillText('you are warmly invited to the wedding of', mid, 440);
+  x.font = '110px "Great Vibes", cursive'; x.fillText(C.groom, mid, 580); x.fillText('& ' + C.bride, mid, 700);
+  x.fillStyle = '#dcb46c'; x.fillRect(mid - 60, 760, 120, 2);
+  x.fillStyle = '#fff3de'; x.font = '38px "Cormorant Garamond", serif';
+  x.fillText(C.dateText, mid, 840); x.fillText(V.name + ', Shivamogga', mid, 890);
+  x.fillStyle = '#dcb46c'; x.font = 'italic 28px "Cormorant Garamond", serif';
+  x.fillText('Admit this guest with love', mid, 990);
+  $('passOut').innerHTML = ''; $('passOut').appendChild(c);
+  const dl = document.createElement('a'); dl.className = 'btn solid'; dl.textContent = 'Save as picture';
+  dl.href = c.toDataURL('image/png'); dl.download = `invitation-pass-${name.replace(/\W+/g, '-')}.png`;
+  const sh = document.createElement('a'); sh.className = 'btn'; sh.textContent = 'Share on WhatsApp'; sh.target = '_blank'; sh.rel = 'noopener';
+  sh.href = `https://wa.me/?text=${q(`${name} is invited to the wedding of ${both} · ${C.dateText}\n${pageUrl}`)}`;
+  $('passOut').append(dl, sh);
+};
+document.fonts && document.fonts.load('40px "Great Vibes"');
+
+// RSVP (goes to the family the guest chooses)
+$('side').innerHTML = C.families.map((f, i) => `<option value="${i}">${f.title}</option>`).join('');
+$('attend').innerHTML = C.events.map(e => `<label><input type="checkbox" value="${e.title}" checked> ${e.title} (${e.day.split(', ')[1]})</label>`).join('');
+function rsvp() {
+  const f = C.families[$('side').value];
+  const n = $('rname').value.trim() || '(your name)';
+  const ev = [...document.querySelectorAll('#attend input:checked')].map(i => i.value).join(', ') || 'none yet';
+  const w = $('wish').value.trim();
+  const msg = `Hello! This is ${n}. I am replying to ${f.title}.\nGuests: ${$('guests').value}\nAttending: ${ev}` + (w ? `\nMy wishes: ${w}` : '') + `\nCongratulations ${both}!`;
+  $('prev2').textContent = msg; $('send').href = `https://wa.me/${f.phone}?text=${q(msg)}`;
+}
+$('rsvpForm').addEventListener('input', rsvp); rsvp();
+</script>
+</body>
+</html>
